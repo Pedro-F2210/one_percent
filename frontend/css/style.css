@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+}
+
+/* 1. Definições gerais */
+
+:root {
+    --background: #0f141b;
+    --sidebar: #151c26;
+    --card: #1b2430;
+    --text: #f1f5f9;
+    --text-muted: #9ca8b8;
+    --primary: #20d879;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    display: flex;
+}
+
+/* 2. Estrutura principal */
+
+aside {
+    width: 250px;
+    min-height: 100vh;
+    background-color: var(--sidebar);
+}
+
+#app-content {
+    flex: 1;
+    min-width: 0;
+}
+
+header {
+    padding: 16px;
+}
+
+header > div {
+    display: inline-block;
+    font-size: 14px;
+}
+
