@@ -9,12 +9,14 @@
 /* 1. Definições gerais */
 
 :root {
-    --background: #0f141b;
+    --background: #0F172A;
     --sidebar: #151c26;
-    --card: #1b2430;
     --text: #f1f5f9;
     --text-muted: #9ca8b8;
     --primary: #20d879;
+    --border: #2A2D34; 
+    --card: #171E29;
+    --texto-verde: #22c55e;
 }
 
 * {
@@ -44,21 +46,163 @@ aside {
 }
 
 header {
-    padding: 16px;
+    padding: 16px 16px 16px 30px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #2A2D34;
+    border-bottom: 1px solid var(--border);
     gap: 10px;
 }
 
-header > div {
+header > div, header > span {
     font-size: 14px;
 }
 
-.cinza {
+main {
+    padding: 30px;
+}
+
+main > h2 {
+    margin: 10px 0px 25px 0px;
+    font-size: 13px;
+}
+
+main > h1 {
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+#progresso-diario {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#progresso-diario > article {
+    max-width: 363px;  
+    min-width: 280px;
+    width: 100%;
+    min-height: 140px;
+    height: auto;
+}
+
+#cartao1 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#circulo-progresso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid var(--border);
+    max-width: 100px;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    border-radius: 50%;
+    font-size: 24px;
+    margin: 10px;
+}
+
+#progresso-info {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#progresso-titulo {
+    font-size: 12px;
+    margin-top: 17px;
+}
+
+#progresso-info > h3 {
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+#progresso-feedback {
+    font-size: 11px;
+    font-weight: normal;
+    color: var(--texto-verde);
+    margin-bottom: 20px;
+}
+
+#cartao2 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#cartao3 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.letra-transparente {
+    font-weight: normal;
     color: var(--text-muted);
 }
 
+#cartao2 h3 {
+    font-size: 12px;
+    margin-top: 4px;
+    margin: 4px 0px 10px 0px;
+}
 
+.num-grande {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
 
+#consistencia-dias {
+    font-size: 13px;
 
+}
+
+#consistencia-registo {
+    font-size: 11px;
+}
+
+.icone-progresso {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+#cartao3 h3 {
+    font-size: 12px;
+    margin: 4px 0px 10px 0px;
+}
+
+#tempo-minuto {
+    font-size: 13px;
+}
+
+#tempo-objetivo {
+    font-size: 11px;
+}

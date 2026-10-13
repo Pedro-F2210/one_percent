@@ -30,36 +30,43 @@
     </aside>
     <div id="app-content">
         <header>
-            <div class="cinza">O meu espaço </div> 
-            <span class="material-symbols-outlined cinza">chevron_right</span>
+            <div class="letra-transparente">O meu espaço </div> 
+            <span class="material-symbols-outlined letra-transparente">chevron_right</span>
             <div>O meu dia</div>
         </header>
         
         <main>
             <h1>Olá, Miguel. Vamos dar mais um passo?</h1>
-            <h2>Pequenas ações hoje. Uma versão melhor de ti amanhã.</h2>
-            <section id="resumo-diario">
-                <article id="progresso-diario">
+            <h2 class="letra-transparente">Pequenas ações hoje. Uma versão melhor de ti amanhã.</h2>
+            <section id="progresso-diario">
+                <article id="cartao1">
+                        <div id="circulo-progresso">
+                           0%
+                        </div>
+                        <div id="progresso-info">
+                            <p id="progresso-titulo" class="letra-transparente">O teu progresso hoje</p>
+                            <h3>0 de 6 tarefas</h3>
+                            <p id="progresso-feedback">Já estás a meio. Continua assim.</p>
+                        </div>
+                </article>
+                <article id="cartao2">
                     <div>
-                        <h2>O teu progresso hoje</h2>
-                        <p>3 de 6 tarefas</p>
-                        <p>Já estás a meio. Continua assim</p>
+                        <h3 class="letra-transparente">Consistência</h3>
+                            <p id="consistencia-dias" class="letra-transparente"><span class="num-grande">12</span> dias seguidos</p>
+                            <p id="consistencia-registo" class="letra-transparente">o teu melhor registo é de 30 dias.</p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined icone-progresso">local_fire_department</span>
                     </div>
                 </article>
-                <article id="consistencia">
+                <article id="cartao3">
                     <div>
-                        <h3>Consistência</h3>
-                        <p>12 dias seguidos</p>
-                        <p>o teu melhor registo é de 30 dias.</p>
-                        <span class="material-symbols-outlined">local_fire_department</span>
+                        <h3 class="letra-transparente">Tempo de foco</h3>
+                        <p id="tempo-minuto" class="letra-transparente"><span class="num-grande">45</span> minutos hoje</p>
+                        <p id="tempo-objetivo" class="letra-transparente">Objetivo diário: 90 minutos</p>
                     </div>
-                </article>
-                <article id="tempo-foco">
                     <div>
-                        <h3>Tempo de foco</h3>
-                        <p>45 minutos hoje</p>
-                        <p>Objetivo diário: 90 minutos</p>
-                        <span class="material-symbols-outlined">timer</span>
+                        <span class="material-symbols-outlined icone-progresso">timer</span>
                     </div>
                 </article>
             </section>
