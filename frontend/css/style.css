@@ -45,10 +45,20 @@ aside {
 
 header {
     padding: 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2A2D34;
+    gap: 10px;
 }
 
 header > div {
-    display: inline-block;
     font-size: 14px;
 }
+
+.cinza {
+    color: var(--text-muted);
+}
+
+
+
 
