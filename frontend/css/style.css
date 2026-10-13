@@ -17,6 +17,7 @@
     --border: #2A2D34; 
     --card: #171E29;
     --texto-verde: #22c55e;
+    --texto-botao: #092015;
 }
 
 * {
@@ -105,8 +106,7 @@ main > h1 {
     border: 7px solid var(--border);
     max-width: 100px;
     width: 100%;
-    min-height: 100px;
-    height: auto;
+    height: 15.5vh;
     border-radius: 50%;
     font-size: 24px;
     margin: 10px;
@@ -206,3 +206,48 @@ main > h1 {
 #tempo-objetivo {
     font-size: 11px;
 }
+
+#checklist {
+    background-color: var(--card);
+    max-width: 688px;
+    width: 100%;
+    min-height: 554px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    height: auto;
+    margin: 15px 0px;
+    padding: 20px;
+}
+
+#topo-checklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#topo-checklist h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+#topo-checklist p {
+    font-size: 11px;
+    margin: 8px 0px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 128px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+}
+
+#topo-botao {
+    background-color: var(--primary);
+    color: var(--texto-botao);
+}
+
