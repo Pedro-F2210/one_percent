@@ -290,3 +290,49 @@ main > h1 {
     align-items: center;
     gap: 10px;
 }
+
+#conteudo-centro {
+    display: flex;
+    flex-direction: row;
+}
+
+#tua-intencao {
+    max-width: 336px;
+    width: 100%;
+    min-height: 555px;
+    height: auto;
+    margin: 15px 0px 15px 15px;
+}
+
+#intencao-hoje {
+    border: 1px solid var(--border);
+    background-color: var(--card);
+    border-radius: 14px;
+    padding: 10px;
+}
+
+#intencao-hoje > h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#intencao-hoje > h4 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#intencao-hoje > p {
+    font-size: 11px;
+}
+
+#esta-semana {
+    max-width: 336px;
+    width: 100%;
+    min-height: 335px;
+    height: auto;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-top: 15px;
+    padding: 10px;
+}
