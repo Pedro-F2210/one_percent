@@ -454,3 +454,61 @@ aside {
     justify-self: right;
     align-self: center;
 }
+
+#temporizador {
+    width: 100%;
+    min-height: 88px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    align-items: center;
+    padding: 0px 22px;
+}
+
+#temporizador > div {
+    display: flex;
+    flex-direction: row;    
+    gap: 18px;
+}
+
+#temporizador-iniciar {
+    border: none;
+    background-color: var(--texto-verde);
+    color: var(--background);
+    width: 124px;
+}
+
+#temporizador-check {
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    width: 108px;
+}
+
+#temporizador button {
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#temporizador button > span {
+    font-weight: lighter;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+#paragrafo-final {
+    font-size: 12px;
+    opacity: 60%;
+}
