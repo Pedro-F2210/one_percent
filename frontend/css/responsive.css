@@ -2,8 +2,37 @@
 
 /* Estilos responsivos do One Percent */
 
-/* Laptop e ecrãs mais pequenos */
+/* Laptop pequeno */
+@media screen and (max-width: 1200px) {
+    #circulo-progresso {
+        max-width: 66px;
+        height: 9.5vh;
+        font-size: 17px;
+    }
+
+    #progresso-titulo {
+        font-size: 10px;
+    }
+
+    #progresso-info > h3 {
+        font-size: 16px;
+    }
+
+    #progresso-feedback {
+        font-size: 10px;
+    }
+
+    #tua-intencao {
+        max-width: 231px;
+    }
+}
 
 /* Tablet */
+@media screen and (max-width: 768px) {
+
+}
 
 /* Telemóvel */
+@media screen and (max-width: 480px) {
+
+}
