@@ -36,8 +36,13 @@ body {
 /* 2. Estrutura principal */
 
 aside {
-    width: 250px;
+    max-width: 232px;
+    width: 100%;
+    padding: 30px 20px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     background-color: var(--sidebar);
 }
 
@@ -80,7 +85,6 @@ main > h1 {
 
 #progresso-diario > article {
     max-width: 363px;  
-    min-width: 280px;
     width: 100%;
     min-height: 140px;
     height: auto;
@@ -145,7 +149,6 @@ main > h1 {
     display: flex;
     flex-direction: row;
     display: flex;
-    align-items: top;
     justify-content: space-between;
     gap: 10px;
 }
@@ -158,7 +161,6 @@ main > h1 {
     display: flex;
     flex-direction: row;
     display: flex;
-    align-items: top;
     justify-content: space-between;
     gap: 10px;
 }
@@ -209,7 +211,7 @@ main > h1 {
 
 #checklist {
     background-color: var(--card);
-    max-width: 688px;
+    max-width: 700px;
     width: 100%;
     min-height: 554px;
     border: 1px solid var(--border);
@@ -297,7 +299,7 @@ main > h1 {
 }
 
 #tua-intencao {
-    max-width: 336px;
+    max-width: 344px;
     width: 100%;
     min-height: 555px;
     height: auto;
@@ -326,7 +328,7 @@ main > h1 {
 }
 
 #esta-semana {
-    max-width: 336px;
+    max-width: 344px;
     width: 100%;
     min-height: 335px;
     height: auto;
@@ -337,16 +339,6 @@ main > h1 {
     padding: 10px;
 }
 
-
-aside {
-    background-color: var(--sidebar);
-    max-width: 232px;
-    width: 100%;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
 
 #logo-one-percent {
     display: flex;
@@ -501,7 +493,7 @@ aside {
 footer {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 0px 30px 30px;
 }
 
 footer p {
