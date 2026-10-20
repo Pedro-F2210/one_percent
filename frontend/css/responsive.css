@@ -6,7 +6,7 @@
 @media screen and (max-width: 1200px) {
     #circulo-progresso {
         max-width: 66px;
-        height: 9.5vh;
+        height: 66px;
         font-size: 17px;
     }
 
@@ -29,6 +29,71 @@
 
 /* Tablet */
 @media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: inline-flex;
+        background: none;
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+    }
+
+    #barra-lateral {
+        position: fixed;
+        top: 0;
+        left: -250px;  
+        width: 250px;
+        height: 100vh;
+        z-index: 1000;  
+        transition: left 0.3s ease-in-out;  
+    }
+
+    #barra-lateral.active {
+        left: 0;
+        box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
+    }
+    
+    #tua-intencao {
+        max-width: 208px;
+        display: flex;
+        flex-direction: row;
+        max-width: 708px;
+        width: 100%;
+        min-height: 0px;
+        margin: 15px 15px 15px 0px;
+        gap: 15px;
+    }
+
+    #esta-semana {
+        min-height: 160px;
+        margin-top: 0px;
+    }
+
+    #progresso-diario {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 15px;
+    }
+
+    #progresso-diario > article {
+        flex: 1 1 45%;
+        min-width: 280px;
+        max-width: 708px;
+        width: 100%;
+    }
+
+    #checklist, #intencao-hoje, #esta-semana {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #cartao3 {
+        width: 100vw;
+    }
+
+    #conteudo-centro {
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
