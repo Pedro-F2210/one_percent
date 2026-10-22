@@ -1,7 +1,3 @@
-@charset "UTF-8";
-
-/* Estilos responsivos do One Percent */
-
 /* Laptop pequeno */
 @media screen and (max-width: 1200px) {
     #circulo-progresso {
@@ -53,19 +49,19 @@
     }
     
     #tua-intencao {
-        max-width: 208px;
         display: flex;
         flex-direction: row;
-        max-width: 708px;
+        max-width: 100%;
         width: 100%;
         min-height: 0px;
-        margin: 15px 15px 15px 0px;
+        margin: 15px 0px;
         gap: 15px;
     }
 
     #esta-semana {
         min-height: 160px;
         margin-top: 0px;
+        max-width: 100%;
     }
 
     #progresso-diario {
@@ -76,8 +72,8 @@
 
     #progresso-diario > article {
         flex: 1 1 45%;
-        min-width: 280px;
-        max-width: 708px;
+        min-width: 240px;
+        max-width: 100%;
         width: 100%;
     }
 
@@ -86,18 +82,91 @@
         max-width: 100% !important;
     }
 
-    #cartao3 {
-        width: 100vw;
-    }
-
     #conteudo-centro {
         display: flex;
         flex-direction: column;
     }
-
 }
 
 /* Telemóvel */
 @media screen and (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
 
+    main h1 {
+        font-size: 18px; 
+        line-height: 1.3;
+    }
+
+    #progresso-diario > article {
+        flex: 1 1 100%;
+        min-width: 0;      
+        width: 100%;       
+        max-width: 100%;   
+    }
+
+    #circulo-progresso {
+        width: 80px;
+        height: 80px;
+        max-width: 80px;
+        min-width: 80px;
+        font-size: 20px;
+    }
+
+    #progresso-info > h3 {
+        font-size: 16px;
+    }
+
+    #tua-intencao {
+        flex-direction: column;
+        margin: 15px 0px; 
+        width: 100%;
+    }
+
+    #temporizador {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    #temporizador h3 {
+        font-size: 14px;
+    }
+
+    #temporizador > div {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .botao {         
+        flex: 1;
+        width: auto;
+        max-width: none;   
+        min-width: 0px;      
+        font-size: 11px;   
+        padding: 10px 4px;  
+        white-space: nowrap; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    #temporizador-iniciar {
+        max-width: none; 
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    footer p, #paragrafo-final {
+        font-size: 10px;   
+        opacity: 0.7;
+    }
 }
+
