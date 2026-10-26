@@ -102,6 +102,31 @@ button {
     height: 48px;
 }
 
+button:hover {
+    background-color: #00ff88;
+    box-shadow: 0 0 15px 5px #00ff88;
+    color: #111111;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+button:active {
+    animation: pulsoInstantaneo 0.15s ease-out;
+}
+
+@keyframes pulsoInstantaneo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 input {
     font-size: 13px;
     color: var(--text-muted);
