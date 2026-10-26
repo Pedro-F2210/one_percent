@@ -117,55 +117,79 @@ if (botaoTopoNovaTarefa) {
     botaoTopoNovaTarefa.addEventListener('click', criarNovaTarefa);
 }
 
+// ==================== LÓGICA DO TEMPORIZADOR MVP ====================
 let cronometro;
 let segundosFoco = 0;
-let emFoco = false;
 
 const btnIniciarFoco = document.getElementById('temporizador-iniciar');
 const btnConcluirFoco = document.getElementById('temporizador-check');
 const textoTempoMinuto = document.getElementById('tempo-minuto');
 
-function formatarTempo(segundosTotais) {
-    const minutos = Math.floor(segundosTotais / 60);
-    return `${minutos} minutos hoje`;
+// Força o botão concluir a começar escondido mal o script carrega (Garantia extra)
+if (btnConcluirFoco) {
+    btnConcluirFoco.classList.add('escondido');
 }
 
 if (btnIniciarFoco) {
     btnIniciarFoco.addEventListener('click', function() {
-        emFoco = !emFoco;
-
-        if (emFoco) {
-            btnIniciarFoco.innerHTML = '<span class="material-symbols-outlined">pause</span> Pausar Foco';
-            btnIniciarFoco.style.backgroundColor = '#e11d48';
-            btnIniciarFoco.style.color = '#ffffff';
-
-            cronometro = setInterval(() => {
-                segundosFoco++;
-                if (textoTempoMinuto) {
-                    textoTempoMinuto.innerHTML = `<span class="num-grande">${Math.floor(segundosFoco / 60)}</span> minutos hoje`;
-                }
-            }, 1000);
-        } else {
-            clearInterval(cronometro);
-            btnIniciarFoco.innerHTML = '<span class="material-symbols-outlined">play_arrow</span> Iniciar Foco';
-            btnIniciarFoco.style.backgroundColor = 'var(--texto-verde)';
-            btnIniciarFoco.style.color = 'var(--background)';
+        // 1. Alternância de botões imediata
+        btnIniciarFoco.classList.add('escondido');
+        if (btnConcluirFoco) {
+            btnConcluirFoco.classList.remove('escondido');
         }
+
+        // 2. Inicia o contador de segundos contínuos
+        cronometro = setInterval(() => {
+            segundosFoco++;
+            if (textoTempoMinuto) {
+                // Atualiza o ecrã mantendo o número grande em destaque e a classe do teu CSS
+                const minutos = Math.floor(segundosFoco / 60);
+                textoTempoMinuto.innerHTML = `<span class="num-grande">${minutos}</span> minutos hoje`;
+            }
+        }, 1000);
     });
 }
 
 if (btnConcluirFoco) {
     btnConcluirFoco.addEventListener('click', function() {
+        // 1. Para o tempo
         clearInterval(cronometro);
-        emFoco = false;
+        
+        // 2. Volta ao estado inicial de botões
+        btnConcluirFoco.classList.add('escondido');
         if (btnIniciarFoco) {
-            btnIniciarFoco.innerHTML = '<span class="material-symbols-outlined">play_arrow</span> Iniciar Foco';
-            btnIniciarFoco.style.backgroundColor = 'var(--texto-verde)';
-            btnIniciarFoco.style.color = 'var(--background)';
+            btnIniciarFoco.classList.remove('escondido');
         }
-        alert(`Excelente sessão de foco! Somaste ${Math.floor(segundosFoco / 60)} minutos ao teu dia.`);
+        
+        // 3. Mostra o resultado do foco
+        const minutosFinais = Math.floor(segundosFoco / 60);
+        setTimeout(() => {
+            alert(`Excelente sessão de foco! Somaste ${minutosFinais} minutos au teu dia.`);
+        }, 100);
     });
 }
+// ====================================================================
+
+
+if (btnConcluirFoco) {
+    btnConcluirFoco.addEventListener('click', function() {
+        // 1. Para o tempo
+        clearInterval(cronometro);
+        
+        // 2. Volta ao estado inicial de botões
+        btnConcluirFoco.classList.add('escondido');
+        if (btnIniciarFoco) {
+            btnIniciarFoco.classList.remove('escondido');
+        }
+        
+        // 3. Mostra o resultado do foco
+        const minutosFinais = Math.floor(segundosFoco / 60);
+        setTimeout(() => {
+            alert(`Excelente sessão de foco! Somaste ${minutosFinais} minutos ao teu dia.`);
+        }, 100);
+    });
+}
+// ====================================================================
 
 const formulario = document.querySelector('form');
 if (formulario) {

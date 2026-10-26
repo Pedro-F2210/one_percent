@@ -252,11 +252,35 @@ main > h1 {
     gap: 6px;
 }
 
+.botao:active {
+    animation: pulsoInstantaneo 0.15s ease-out;
+    }
+
+    @keyframes pulsoInstantaneo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 #topo-botao {
     background-color: var(--texto-verde);
     color: var(--texto-botao);
     font-size: 12px;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#topo-botao:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
 }
 
 #topo-botao > span {
@@ -475,6 +499,20 @@ main > h1 {
     background-color: var(--texto-verde);
     color: var(--background);
     width: 124px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#temporizador-iniciar:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
+}
+
+#temporizador-iniciar.em-pausa:hover {
+    background-color: #be123c !important; 
+    box-shadow: 0 0 15px 5px #e11d48;   
+    color: #ffffff !important;
 }
 
 #temporizador-check {
@@ -482,6 +520,7 @@ main > h1 {
     color: var(--text);
     border: 1px solid var(--border);
     width: 108px;
+    cursor: pointer;
 }
 
 #temporizador button {
@@ -492,6 +531,15 @@ main > h1 {
 #temporizador button > span {
     font-weight: lighter;
 }
+
+#temporizador-check:hover {
+    background-color: #00ff88 !important;
+    box-shadow: 0 0 15px 5px #00ff88;
+    color: #111111 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+
 
 footer {
     display: flex;
@@ -507,3 +555,8 @@ footer p {
     font-size: 12px;
     opacity: 60%;
 }
+
+.escondido {
+    display: none !important;
+}
+
