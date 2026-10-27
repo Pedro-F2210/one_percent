@@ -89,6 +89,11 @@ a {
     font-weight: bold;
     text-decoration: none;
     color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--texto-verde);
 }
 
 button {
@@ -173,3 +178,42 @@ input {
         margin-top: 24px;
     }
 }
+
+/* ==================== ACABAMENTO DOS CAMPOS DE AUTH ==================== */
+
+/* Estilo geral para as caixas de texto do formulário */
+.form-grupo input {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.03); /* Fundo quase invisível, combinando com o dashboard */
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    border-radius: 8px;
+    padding: 0 15px;
+    color: var(--text, #ffffff);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Efeito de Foco (Quando o utilizador clica para escrever) */
+.form-grupo input:focus {
+    border-color: var(--texto-verde, #00ff88); /* A borda acende a verde neon */
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.2); /* Brilho neon ultra subtil para não distrair */
+}
+
+/* Cor do texto de exemplo (Placeholder) */
+.form-grupo input::placeholder {
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.3));
+}
+
+/* Estilo das etiquetas (Labels) acima dos inputs */
+.form-grupo label {
+    display: block;
+    font-size: 12px;
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.6));
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+
+
