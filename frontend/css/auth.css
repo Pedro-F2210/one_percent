@@ -126,6 +126,11 @@ button:active {
     }
 }
 
+.fundo-card:hover {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
 
 input {
     font-size: 13px;

@@ -213,10 +213,13 @@ main > h1 {
 }
 
 #checklist {
-    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    position: relative;
     max-width: 700px;
     width: 100%;
-    min-height: 554px;
+    max-height: 554px;
+    background-color: var(--background-card, #161d26);
     border: 1px solid var(--border);
     border-radius: 14px;
     height: auto;
@@ -295,15 +298,98 @@ main > h1 {
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    gap: 20px;
+    gap: 10px;
     padding-bottom: 15px;
     border-bottom: 1px solid var(--border);
-    padding-left: 20px;
+    padding: 0px 0px 0px 20px;
     margin-bottom: 0px;
+}
+
+#nav-checklist li span {
+    margin-left: 6px;
+    font-weight: normal;
+    color: var(--texto-verde, #00ff88); 
+    opacity: 0.8;
 }
 
 #nav-checklist li {
     font-size: 11px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-bottom: 5px;
+}
+
+#nav-checklist li:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#nav-checklist li:not(.letra-transparente) {
+    color: var(--texto-verde, #00ff88) !important;
+    font-weight: bold !important;
+    background-color: rgba(0, 255, 136, 0.08);
+    box-shadow: inset 0 0 8px rgba(0, 255, 136, 0.2); 
+}
+
+#nav-checklist li:active {
+    transform: scale(0.95);
+    transition: transform 0.05s ease-in-out;
+}
+
+#lista-tarefas-ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px; 
+}
+
+#lista-tarefas-ul li:last-child {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #161d26;
+    border-top: 1px solid var(--border);
+    border-bottom: none !important; 
+    padding: 14px 0px 14px 22px !important;
+
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.4)) !important;
+    opacity: 0.6;
+    font-weight: normal;
+    transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#lista-tarefas-ul li:last-child:hover {
+    opacity: 1;
+    color: var(--text, #ffffff) !important;
+    cursor: pointer;
+}
+
+#lista-tarefas-ul li:last-child input,
+#lista-tarefas-ul li:last-child label::before,
+#lista-tarefas-ul li:last-child label::after {
+    display: none !important;
+}
+
+#lista-tarefas-ul li:last-child span {
+    color: inherit;
+    font-size: 18px;
+}
+
+#tarefas-checklist {
+    flex: 1;
+    overflow-y: auto; 
+    padding-right: 5px; 
+}
+
+#tarefas-checklist::-webkit-scrollbar {
+    width: 6px;
+}
+
+#tarefas-checklist::-webkit-scrollbar-thumb {
+    background-color: var(--border, rgba(255, 255, 255, 0.1));
+    border-radius: 10px;
 }
 
 #tarefas-checklist > ul {
@@ -317,7 +403,64 @@ main > h1 {
     padding: 11px 0px 11px 22px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    position: relative; 
+}
+
+#tarefas-checklist li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+#tarefas-checklist li label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    padding-left: 28px; 
+    width: 100%;
+    min-height: 20px;
+}
+
+#tarefas-checklist li label::before {
+    content: "";
+    position: absolute;
+    left: 22px; 
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    border: 2px solid #3f4857; 
+    border-radius: 5px; 
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#tarefas-checklist li input[type="checkbox"]:checked + label::before {
+    background-color: var(--texto-verde, #00ff66);
+    border-color: var(--texto-verde, #00ff66);
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
+}
+
+#tarefas-checklist li label::after {
+    content: "";
+    position: absolute;
+    left: 28px; 
+    top: 50%;
+    transform: translateY(-65%) rotate(45deg);
+    width: 4px;
+    height: 9px;
+    border: solid #111111;  
+    border-width: 0 2px 2px 0;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+#tarefas-checklist li input[type="checkbox"]:checked + label::after {
+    opacity: 1;
 }
 
 #conteudo-centro {

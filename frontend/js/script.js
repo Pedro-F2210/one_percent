@@ -28,12 +28,22 @@ abasChecklist.forEach(aba => {
         });
         aba.classList.remove('letra-transparente');
         aba.style.fontWeight = 'bold';
+
+        // ATUALIZAÇÃO: Define o filtro ativo com base no texto do botão e redesenha a lista
+        const textoAba = aba.textContent.trim();
+        if (textoAba.includes("Todas")) filtroAtivo = "Todas";
+        else if (textoAba.includes("Pendentes")) filtroAtivo = "Pendentes";
+        else if (textoAba.includes("Concluídas")) filtroAtivo = "Concluídas";
+
+        renderizarTarefas(); // Redesenha a lista aplicando o filtro escolhido
     });
 });
+
 
 let tarefas = [
     { id: 1, texto: "Ler 20 páginas", concluida: false }
 ];
+let filtroAtivo = "Todas";
 
 const listaUl = document.getElementById('lista-tarefas-ul');
 
@@ -58,13 +68,32 @@ function atualizarPainelProgresso() {
             textoFeedback.textContent = "Incrível! Completaste o teu 1% de hoje.";
         }
     }
+
+    const pendentes = total - concluidas;
+
+    const spanTodas = document.getElementById('contador-todas');
+    const spanPendentes = document.getElementById('contador-pendentes');
+    const spanConcluidas = document.getElementById('contador-concluidas');
+
+    if (spanTodas) spanTodas.textContent = total;
+    if (spanPendentes) spanPendentes.textContent = pendentes;
+    if (spanConcluidas) spanConcluidas.textContent = concluidas;
 }
 
 function renderizarTarefas() {
     if (!listaUl) return;
     listaUl.innerHTML = '';
 
-    tarefas.forEach(tarefa => {
+    // ATUALIZAÇÃO: Filtra as tarefas antes de as mostrar no ecrã
+    let tarefasFiltradas = tarefas;
+    if (filtroAtivo === "Pendentes") {
+        tarefasFiltradas = tarefas.filter(t => !t.concluida);
+    } else if (filtroAtivo === "Concluídas") {
+        tarefasFiltradas = tarefas.filter(t => t.concluida);
+    }
+
+    // Agora usamos a lista 'tarefasFiltradas' para desenhar no ecrã
+    tarefasFiltradas.forEach(tarefa => {
         const li = document.createElement('li');
         
         const checkbox = document.createElement('input');
@@ -92,12 +121,14 @@ function renderizarTarefas() {
         listaUl.appendChild(li);
     });
 
+    // Mantém o botão de adicionar sempre visível no final da lista
     const liAdicionar = document.createElement('li');
     liAdicionar.style.cursor = 'pointer';
     liAdicionar.innerHTML = '<span class="material-symbols-outlined">add</span>Adicionar um pequeno passo';
     liAdicionar.addEventListener('click', criarNovaTarefa);
     listaUl.appendChild(liAdicionar);
 }
+
 
 function criarNovaTarefa() {
     const texto = prompt("O que vais fazer a seguir?");
@@ -119,13 +150,24 @@ if (botaoTopoNovaTarefa) {
 
 // ==================== LÓGICA DO TEMPORIZADOR MVP ====================
 let cronometro;
-let segundosFoco = 0;
+let segundosFoco = 1500;
+
+function formatarCronometro(segundosTotais) {
+    const minutos = Math.floor(segundosTotais / 60);
+    const segundos = segundosTotais % 60;
+    
+    const minutosFormatados = minutos < 10 ? `0${minutos}` : minutos;
+    const segundosFormatados = segundos < 10 ? `0${segundos}` : segundos;
+    
+    return `<span class="material-symbols-outlined">timer</span> <span class="num-grande">${minutosFormatados}:${segundosFormatados}</span>`;
+}
 
 const btnIniciarFoco = document.getElementById('temporizador-iniciar');
 const btnConcluirFoco = document.getElementById('temporizador-check');
 const textoTempoMinuto = document.getElementById('tempo-minuto');
 
 // Força o botão concluir a começar escondido mal o script carrega (Garantia extra)
+// Força o botão concluir a começar escondido mal o script carrega
 if (btnConcluirFoco) {
     btnConcluirFoco.classList.add('escondido');
 }
@@ -138,13 +180,17 @@ if (btnIniciarFoco) {
             btnConcluirFoco.classList.remove('escondido');
         }
 
-        // 2. Inicia o contador de segundos contínuos
+        // 2. Inicia o contador decrescente
         cronometro = setInterval(() => {
-            segundosFoco++;
-            if (textoTempoMinuto) {
-                // Atualiza o ecrã mantendo o número grande em destaque e a classe do teu CSS
-                const minutos = Math.floor(segundosFoco / 60);
-                textoTempoMinuto.innerHTML = `<span class="num-grande">${minutos}</span> minutos hoje`;
+            if (segundosFoco > 0) {
+                segundosFoco--; // Diminui 1 segundo
+                if (textoTempoMinuto) {
+                    textoTempoMinuto.innerHTML = formatarCronometro(segundosFoco);
+                }
+            } else {
+                // O tempo chegou a zero! Termina a sessão automaticamente
+                clearInterval(cronometro);
+                btnConcluirFoco.click(); 
             }
         }, 1000);
     });
@@ -155,40 +201,29 @@ if (btnConcluirFoco) {
         // 1. Para o tempo
         clearInterval(cronometro);
         
-        // 2. Volta ao estado inicial de botões
+        // 2. Calcula quantos minutos o utilizador completou de verdade
+        const segundosPassados = 1500 - segundosFoco;
+        const minutosCompletos = Math.floor(segundosPassados / 60);
+        
+        // 3. Volta ao estado inicial de botões e faz reset do tempo
         btnConcluirFoco.classList.add('escondido');
         if (btnIniciarFoco) {
             btnIniciarFoco.classList.remove('escondido');
         }
         
-        // 3. Mostra o resultado do foco
-        const minutosFinais = Math.floor(segundosFoco / 60);
-        setTimeout(() => {
-            alert(`Excelente sessão de foco! Somaste ${minutosFinais} minutos au teu dia.`);
-        }, 100);
-    });
-}
-// ====================================================================
-
-
-if (btnConcluirFoco) {
-    btnConcluirFoco.addEventListener('click', function() {
-        // 1. Para o tempo
-        clearInterval(cronometro);
-        
-        // 2. Volta ao estado inicial de botões
-        btnConcluirFoco.classList.add('escondido');
-        if (btnIniciarFoco) {
-            btnIniciarFoco.classList.remove('escondido');
+        // Faz reset do cronómetro de volta para os 25:00 no ecrã
+        segundosFoco = 1500;
+        if (textoTempoMinuto) {
+            textoTempoMinuto.innerHTML = formatarCronometro(segundosFoco);
         }
         
-        // 3. Mostra o resultado do foco
-        const minutosFinais = Math.floor(segundosFoco / 60);
+        // 4. Mostra o resultado do foco
         setTimeout(() => {
-            alert(`Excelente sessão de foco! Somaste ${minutosFinais} minutos ao teu dia.`);
+            alert(`Excelente sessão de foco! Dedicaste ${minutosCompletos} minutos ao teu objetivo.`);
         }, 100);
     });
 }
+
 // ====================================================================
 
 const formulario = document.querySelector('form');
