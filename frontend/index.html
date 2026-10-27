@@ -117,7 +117,34 @@
                         <p class="letra-transparente">Menos pressa, mais presença. Escolhe uma tarefa e dedica-lhe toda a atenção.</p>
                     </article>
                     <article id="esta-semana">
-                        <h3>Esta semana</h3>
+                        <div id="esta-semana-topo">
+                            <h3>Esta semana</h3>
+                            <span class="letra-transparente data-semana">5-11 out.</span>
+                        </div>
+                        
+                        <!-- Gráfico estático (apenas visual para o MVP) -->
+                        <div id="grafico-semanal">
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 60%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 75%;"></div><span>T</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 100%;"></div><span>Q</span></div>
+                            <div class="barra-dia active"><div class="progresso-barra" style="height: 45%;"></div><span>Q</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>D</span></div>
+                        </div>
+                        
+                        <p id="legenda-grafico"><span class="ponto-verde"></span> Tarefas concluídas por dia</p>
+                        
+                        <div id="objetivo-mensal-bloco">
+                            <div id="objetivo-texto">
+                                <span>Ler 2 livros este mês</span>
+                                <strong>1 / 2</strong>
+                            </div>
+                            <div id="barra-progresso-fundo">
+                                <div id="barra-progresso-preenchimento" style="width: 50%;"></div>
+                            </div>
+                            <a href="#" id="link-objetivos">Ver os meus objetivos <span class="material-symbols-outlined">north_east</span></a>
+                        </div>
                     </article>
                 </section>
             </div>
