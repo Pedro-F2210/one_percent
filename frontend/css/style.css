@@ -168,6 +168,19 @@ main > h1 {
     gap: 10px;
 }
 
+#cartao1, #cartao2, #cartao3, #checklist, #intencao-hoje, #temporizador, #esta-semana, #frase-motivacional {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    
+    will-change: transform, box-shadow; 
+}
+
+#cartao1:hover, #cartao2:hover, #cartao3:hover, #checklist:hover, #intencao-hoje:hover, #temporizador:hover, #esta-semana:hover, #frase-motivacional:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+
 .letra-transparente {
     font-weight: normal;
     color: var(--text-muted);
