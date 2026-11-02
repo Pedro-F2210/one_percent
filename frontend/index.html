@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Percent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="shortcut icon" href="images/logo_onepercent_icon.ico" type="image/x-icon">
+</head>
+<body>
+    <aside id="barra-lateral">
+        <div id="logo-one-percent">
+            <img src="images/logo_onepercent.png" alt="logo one percent">
+            <p class="letra-transparente">Small steps. Big results</p>
+        </div>
+        <article id="espaco-pessoal">
+            <h3 class="letra-transparente">ESPAÇO PESSOAL</h3>
+            <div class="pessoal-botao letra-transparente"><span class="material-symbols-outlined">dashboard</span>O meu dia</div>
+            <div class="pessoal-botao letra-transparente"><span class="material-symbols-outlined">checklist</span>As minhas tarefas</div>
+        </article>
+        <article id="frase-motivacional">
+            <span class="material-symbols-outlined">psychiatry</span>
+            <div>Um pouco melhor. <br>Todos os dias</div>
+            <p class="letra-transparente">O teu próximo 1% começa com uma pequena ação.</p>
+        </article>
+        <article id="area-pessoal">
+            <div class="letra-transparente" id="definicoes">
+                <span class="material-symbols-outlined">settings</span>
+                <div>Definições</div>
+            </div>
+            <div id="pessoal">
+                <div id="pessoal-icone">MS</div>
+                <span id="pessoal-nome-conta">
+                    <div id="pessoal-nome">Miguel Silva</div>
+                    <div id="pessoal-conta" class="letra-transparente">Conta pessoal</div>
+                </span>
+                <span class="material-symbols-outlined letra-transparente">unfold_more</span>
+            </div>
+        </article>
+    </aside>
+
+    <div id="app-content">
+        <header>
+            <button type="button" id="btn-menu" class="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="letra-transparente">O meu espaço </div> 
+            <span class="material-symbols-outlined letra-transparente">chevron_right</span>
+            <div>O meu dia</div>
+        </header>
+        
+        <main>
+            <h1>Olá, Pedro. Vamos dar mais um passo?</h1>
+            <h2 class="letra-transparente">Pequenas ações hoje. Uma versão melhor de ti amanhã.</h2>
+            <section id="progresso-diario">
+                <article id="cartao1">
+                        <div id="circulo-progresso">
+                           0%
+                        </div>
+                        <div id="progresso-info">
+                            <p id="progresso-titulo" class="letra-transparente">O teu progresso hoje</p>
+                            <h3>0 de 0 tarefas</h3>
+                            <p id="progresso-feedback">Já estás a meio. Continua assim.</p>
+                        </div>
+                </article>
+                <article id="cartao2">
+                    <div>
+                        <h3 class="letra-transparente">Consistência</h3>
+                            <p id="consistencia-dias" class="letra-transparente"><span class="num-grande">0</span> dias seguidos</p>
+                            <p id="consistencia-registo" class="letra-transparente">o teu melhor registo é de 0 dias.</p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined icone-progresso">local_fire_department</span>
+                    </div>
+                </article>
+                <article id="cartao3">
+                    <div>
+                        <h3 class="letra-transparente">Tempo de foco</h3>
+                        <p id="tempo-minuto" class="letra-transparente"><span class="num-grande">0</span> minutos hoje</p>
+                        <p id="tempo-objetivo" class="letra-transparente">Objetivo diário: 0 minutos</p>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined icone-progresso">timer</span>
+                    </div>
+                </article>
+            </section>
+            <div id="conteudo-centro">
+                <section id="checklist">
+                    <div id="topo-checklist">
+                        <div>
+                            <h3>A minha checklist</h3>
+                            <p class="letra-transparente">Um dia, seis pequenos passos.</p>
+                        </div>
+                        <div class="botao" id="topo-botao"><span class="material-symbols-outlined">add</span>Nova tarefa</div>
+                    </div>
+                    <nav id="nav-checklist">
+                        <ul class="letra-transparente">
+                            <li>Todas <span id="contador-todas">0</span></li>
+                            <li class="letra-transparente">Pendentes <span id="contador-pendentes">0</span></li>
+                            <li class="letra-transparente">Concluídas <span id="contador-concluidas">0</span></li>
+                        </ul>
+                    </nav>
+                    <nav id="tarefas-checklist">
+                        <ul id="lista-tarefas-ul">
+                            <li class="letra-transparente">
+                                <span class="material-symbols-outlined">add</span>Adicionar um pequeno passo
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <section id="tua-intencao">
+                    <article id="intencao-hoje">
+                        <h3>A tua intenção hoje</h3>
+                        <h4>"Dar espaço ao que me faz crescer."</h4>
+                        <p class="letra-transparente">Menos pressa, mais presença. Escolhe uma tarefa e dedica-lhe toda a atenção.</p>
+                    </article>
+                    <article id="esta-semana">
+                        <div id="esta-semana-topo">
+                            <h3>Esta semana</h3>
+                            <span class="letra-transparente data-semana">5-11 out.</span>
+                        </div>
+                        
+                        <!-- Gráfico estático (apenas visual para o MVP) -->
+                        <div id="grafico-semanal">
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 60%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 75%;"></div><span>T</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 100%;"></div><span>Q</span></div>
+                            <div class="barra-dia active"><div class="progresso-barra" style="height: 45%;"></div><span>Q</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>S</span></div>
+                            <div class="barra-dia"><div class="progresso-barra" style="height: 0%;"></div><span>D</span></div>
+                        </div>
+                        
+                        <p id="legenda-grafico"><span class="ponto-verde"></span> Tarefas concluídas por dia</p>
+                        
+                        <div id="objetivo-mensal-bloco">
+                            <div id="objetivo-texto">
+                                <span>Ler 2 livros este mês</span>
+                                <strong>1 / 2</strong>
+                            </div>
+                            <div id="barra-progresso-fundo">
+                                <div id="barra-progresso-preenchimento" style="width: 50%;"></div>
+                            </div>
+                            <a href="#" id="link-objetivos">Ver os meus objetivos <span class="material-symbols-outlined">north_east</span></a>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <section id="temporizador">
+               <h3>Exemplo de tarefa</h3>
+               <div>
+                   <button class="botao" id="temporizador-iniciar">
+                    <span class="material-symbols-outlined">play_arrow</span>
+                    Iniciar Foco
+                    </button>
+                   <button class="botao escondido" id="temporizador-check">
+                    <span class="material-symbols-outlined">check</span>
+                    Concluir
+                   </button>
+               </div>
+            </section>
+        </main>
+        <footer>
+                <p class="letra-transparente">Não preciso de ser perfeito. Preciso de dar um passo em frente.</p>
+                <p class="letra-transparente" id="paragrafo-final">Pequenos passos. Grandes resultados</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

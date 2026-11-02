@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="shortcut icon" href="images/logo_onepercent_icon.ico" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <img src="images/logo_onepercent.png" alt="logo one percent">
+        <section>
+            <h1>Cria a tua conta</h1>
+            <h2>Começa a focar-te no que realmente importa</h2>
+            <form action="" method="post" autocomplete="on">
+                    <div class="grupo-input form-grupo">
+                        <label for="inome">Nome</label>
+                        <input type="text" name="nome" id="inome" minlength="2" maxlength="20" required autocomplete="name" placeholder="O teu Nome">
+                    </div>
+                    <div class="grupo-input form-grupo">
+                        <label for="iemail">Email</label>
+                        <input type="email" name="email" id="iemail" required autocomplete="email" placeholder="O teu email"> 
+                    </div>
+                    <div class="grupo-input form-grupo">
+                        <label for="isenha">Senha</label>
+                        <input type="password" name="senha" id="isenha" required minlength="5" maxlength="20" autocomplete="new-password" placeholder="A tua senha">
+                    </div>
+                    <div class="grupo-input form-grupo">
+                        <label for="icsenha">Confirmar Senha</label>
+                        <input type="password" name="csenha" id="icsenha" required minlength="5" maxlength="20" autocomplete="new-password" placeholder="Confirma a tua senha">
+                    </div>
+                    <button type="submit">Registar</button>
+            </form>
+            <p>Já tem uma conta? <a href="login.html" id="inicie-sessao">Inicie a sessão aqui</a></p>
+        </section>
+    </main>
+</body>
+</html>
