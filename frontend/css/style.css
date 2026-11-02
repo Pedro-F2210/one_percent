@@ -1,0 +1,859 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+}
+
+/* 1. Definições gerais */
+
+.mobile-menu-toggle {
+    display: none;  
+}
+
+:root {
+    --background: #0F172A;
+    --sidebar: #10151d;
+    --text: #f1f5f9;
+    --text-muted: #9ca8b8;
+    --primary: #20d879;
+    --border: #2A2D34; 
+    --card: #171E29;
+    --texto-verde: #22c55e;
+    --texto-botao: #092015;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    display: flex;
+}
+
+/* 2. Estrutura principal */
+
+aside {
+    max-width: 232px;
+    width: 100%;
+    padding: 30px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: var(--sidebar);
+}
+
+#app-content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 16px 16px 16px 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+}
+
+header > div, header > span {
+    font-size: 14px;
+}
+
+main {
+    padding: 30px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main > h2 {
+    margin: 10px 0px 25px 0px;
+    font-size: 13px;
+}
+
+main > h1 {
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+#progresso-diario {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+}
+
+#progresso-diario > article {
+    min-width: 250px; 
+    width: 100%;
+    min-height: 140px;
+    height: auto;
+    flex: 1;
+}
+
+#cartao1 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#circulo-progresso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid var(--border);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 24px;
+    margin: 10px;
+}
+
+#progresso-info {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#progresso-titulo {
+    font-size: 12px;
+    margin-top: 17px;
+}
+
+#progresso-info > h3 {
+    font-weight: normal;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+#progresso-feedback {
+    font-size: 11px;
+    font-weight: normal;
+    color: var(--texto-verde);
+    margin-bottom: 20px;
+}
+
+#cartao2 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#cartao3 {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#cartao1, #cartao2, #cartao3, #checklist, #intencao-hoje, #temporizador, #esta-semana, #frase-motivacional {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    
+    will-change: transform, box-shadow; 
+}
+
+#cartao1:hover, #cartao2:hover, #cartao3:hover, #checklist:hover, #intencao-hoje:hover, #temporizador:hover, #esta-semana:hover, #frase-motivacional:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+.letra-transparente {
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+#cartao2 h3 {
+    font-size: 12px;
+    margin-top: 4px;
+    margin: 4px 0px 10px 0px;
+}
+
+.num-grande {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+#consistencia-dias {
+    font-size: 13px;
+
+}
+
+#consistencia-registo {
+    font-size: 11px;
+}
+
+.icone-progresso {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+#cartao3 h3 {
+    font-size: 12px;
+    margin: 4px 0px 10px 0px;
+}
+
+#tempo-minuto {
+    font-size: 13px;
+}
+
+#tempo-objetivo {
+    font-size: 11px;
+}
+
+#checklist {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-height: 554px;
+    background-color: var(--background-card, #161d26);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    height: auto;
+    margin: 15px 0px;
+}
+
+#topo-checklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#topo-checklist h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+#topo-checklist p {
+    font-size: 11px;
+    margin: 8px 0px 10px 0px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 128px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    gap: 6px;
+}
+
+.botao:active {
+    animation: pulsoInstantaneo 0.15s ease-out;
+    }
+
+    @keyframes pulsoInstantaneo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#topo-botao {
+    background-color: var(--texto-verde);
+    color: var(--texto-botao);
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#topo-botao:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
+}
+
+#topo-botao > span {
+    font-size: 16px;
+}
+
+#nav-checklist {
+    width: 100%;
+}
+
+#nav-checklist > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    padding: 0px 0px 0px 20px;
+    margin-bottom: 0px;
+}
+
+#nav-checklist li span {
+    margin-left: 6px;
+    font-weight: normal;
+    color: var(--texto-verde, #00ff88); 
+    opacity: 0.8;
+}
+
+#nav-checklist li {
+    font-size: 11px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-bottom: 5px;
+}
+
+#nav-checklist li:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#nav-checklist li:not(.letra-transparente) {
+    color: var(--texto-verde, #00ff88) !important;
+    font-weight: bold !important;
+    background-color: rgba(0, 255, 136, 0.08);
+    box-shadow: inset 0 0 8px rgba(0, 255, 136, 0.2); 
+}
+
+#nav-checklist li:active {
+    transform: scale(0.95);
+    transition: transform 0.05s ease-in-out;
+}
+
+#lista-tarefas-ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px; 
+}
+
+#lista-tarefas-ul li:last-child {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #161d26;
+    border-top: 1px solid var(--border);
+    border-bottom: none !important; 
+    padding: 14px 0px 14px 22px !important;
+
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.4)) !important;
+    opacity: 0.6;
+    font-weight: normal;
+    transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#lista-tarefas-ul li:last-child:hover {
+    opacity: 1;
+    color: var(--text, #ffffff) !important;
+    cursor: pointer;
+}
+
+#lista-tarefas-ul li:last-child input,
+#lista-tarefas-ul li:last-child label::before,
+#lista-tarefas-ul li:last-child label::after {
+    display: none !important;
+}
+
+#lista-tarefas-ul li:last-child span {
+    color: inherit;
+    font-size: 18px;
+}
+
+#tarefas-checklist {
+    flex: 1;
+    overflow-y: auto; 
+    padding-right: 5px; 
+}
+
+#tarefas-checklist::-webkit-scrollbar {
+    width: 6px;
+}
+
+#tarefas-checklist::-webkit-scrollbar-thumb {
+    background-color: var(--border, rgba(255, 255, 255, 0.1));
+    border-radius: 10px;
+}
+
+#tarefas-checklist > ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#tarefas-checklist li {
+    border-bottom: 1px solid var(--border);
+    padding: 11px 0px 11px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative; 
+}
+
+#tarefas-checklist li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+#tarefas-checklist li label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    padding-left: 28px; 
+    width: 100%;
+    min-height: 20px;
+}
+
+#tarefas-checklist li label::before {
+    content: "";
+    position: absolute;
+    left: 22px; 
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    border: 2px solid #3f4857; 
+    border-radius: 5px; 
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#tarefas-checklist li input[type="checkbox"]:checked + label::before {
+    background-color: var(--texto-verde, #00ff66);
+    border-color: var(--texto-verde, #00ff66);
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
+}
+
+#tarefas-checklist li label::after {
+    content: "";
+    position: absolute;
+    left: 28px; 
+    top: 50%;
+    transform: translateY(-65%) rotate(45deg);
+    width: 4px;
+    height: 9px;
+    border: solid #111111;  
+    border-width: 0 2px 2px 0;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+#tarefas-checklist li input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+#conteudo-centro {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#tua-intencao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 555px;
+    height: auto;
+    margin: 15px 0px 15px 15px;
+}
+
+#intencao-hoje {
+    border: 1px solid var(--border);
+    background-color: var(--card);
+    border-radius: 14px;
+    padding: 10px;
+}
+
+#intencao-hoje > h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#intencao-hoje > h4 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#intencao-hoje > p {
+    font-size: 11px;
+}
+
+#esta-semana {
+    width: 100%;
+    min-height: 376px;
+    height: auto;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ==================== CARTÃO ESTA SEMANA (PLACEHOLDER MVP) ==================== */
+
+#esta-semana-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-semana {
+    font-size: 11px;
+}
+
+/* Gráfico de Barras */
+#grafico-semanal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.barra-dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 24px;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.progresso-barra {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo da barra vazio */
+    border-radius: 6px;
+    height: 0;
+    position: relative;
+    min-height: 100%;
+}
+
+.progresso-barra::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: inherit; /* Puxa a altura definida no HTML inline */
+    background-color: #1e3a2f; /* Verde mais escuro padrão */
+    border-radius: 6px;
+}
+
+/* Dia atual (Q) ganha um verde mais vivo */
+.barra-dia.active .progresso-barra::after {
+    background-color: #00ff66;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+.barra-dia span {
+    font-size: 10px;
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.4));
+}
+
+.barra-dia.active span {
+    color: #00ff66;
+    font-weight: bold;
+}
+
+#legenda-grafico {
+    font-size: 11px;
+    color: var(--texto-secundario, rgba(255, 255, 255, 0.5));
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+.ponto-verde {
+    width: 6px;
+    height: 6px;
+    background-color: #00ff66;
+    border-radius: 50%;
+}
+
+/* Objetivo Mensal */
+#objetivo-mensal-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#objetivo-texto {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+#barra-progresso-fundo {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#barra-progresso-preenchimento {
+    height: 100%;
+    background-color: #00ff66;
+    border-radius: 3px;
+}
+
+#link-objetivos {
+    color: #00ff66;
+    font-size: 11px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+#link-objetivos span {
+    font-size: 12px;
+}
+
+
+
+#logo-one-percent {
+    display: flex;
+    flex-direction: column;
+    max-width: 163px;
+    width: 100%;
+    height: 55px;
+    height: auto;
+}
+
+#logo-one-percent > img {
+    width: 100%;
+}
+
+#logo-one-percent > p {
+    font-size: 8px;
+    align-self: flex-start;
+}
+
+
+#espaco-pessoal > h3 {
+    font-size: 10px;
+}
+
+.pessoal-botao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    height: 46px;
+}
+
+#frase-motivacional {
+    min-height: 156px;
+    height: auto;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+#frase-motivacional > span {
+    color: var(--texto-verde);
+    margin-bottom: 12px
+}
+
+#frase-motivacional > div {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+#frase-motivacional > p {
+    font-size: 11px;
+}
+
+#definicoes {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+}
+
+#definicoes > span {
+    font-size: 12px;
+}
+
+#pessoal {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+#pessoal-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--border);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    justify-self: left;
+    align-self: center;
+}
+
+#pessoal-nome-conta {
+    display: flex;
+    flex-direction: column;
+    width: 122px;
+}
+
+#pessoal-nome {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+#pessoal-conta {
+    font-size: 10px;
+}
+
+#pessoal > span {
+    font-size: 14px;
+    justify-self: right;
+    align-self: center;
+}
+
+#temporizador {
+    width: 100%;
+    min-height: 88px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    align-items: center;
+    padding: 0px 22px;
+}
+
+#temporizador > div {
+    display: flex;
+    flex-direction: row;    
+    gap: 18px;
+}
+
+#temporizador-iniciar {
+    border: none;
+    background-color: var(--texto-verde);
+    color: var(--background);
+    width: 124px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#temporizador-iniciar:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
+}
+
+#temporizador-iniciar.em-pausa:hover {
+    background-color: #be123c !important; 
+    box-shadow: 0 0 15px 5px #e11d48;   
+    color: #ffffff !important;
+}
+
+#temporizador-check {
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    width: 108px;
+    cursor: pointer;
+}
+
+#temporizador button {
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#temporizador button > span {
+    font-weight: lighter;
+}
+
+#temporizador-check:hover {
+    background-color: #00ff88 !important;
+    box-shadow: 0 0 15px 5px #00ff88;
+    color: #111111 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px 30px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+#paragrafo-final {
+    font-size: 12px;
+    opacity: 60%;
+}
+
+.escondido {
+    display: none !important;
+}
+
