@@ -22,8 +22,9 @@
         display: none !important;
     }
 
-    #tua-intencao {
-        max-width: 231px;
+    #conteudo-centro {
+        display: flex;
+        width: 100%;
     }
 }
 
