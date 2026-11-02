@@ -52,7 +52,9 @@ aside {
 
 #app-content {
     flex: 1;
-    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -69,6 +71,11 @@ header > div, header > span {
 
 main {
     padding: 30px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 main > h2 {
@@ -85,13 +92,15 @@ main > h1 {
     display: flex;
     flex-direction: row;
     gap: 15px;
+    width: 100%;
 }
 
 #progresso-diario > article {
-    max-width: 363px;  
+    min-width: 250px; 
     width: 100%;
     min-height: 140px;
     height: auto;
+    flex: 1;
 }
 
 #cartao1 {
@@ -227,9 +236,9 @@ main > h1 {
 
 #checklist {
     display: flex;
+    flex: 2;
     flex-direction: column;
     position: relative;
-    max-width: 700px;
     width: 100%;
     max-height: 554px;
     background-color: var(--background-card, #161d26);
@@ -479,10 +488,13 @@ main > h1 {
 #conteudo-centro {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 #tua-intencao {
-    max-width: 344px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 555px;
     height: auto;
@@ -511,9 +523,8 @@ main > h1 {
 }
 
 #esta-semana {
-    max-width: 344px;
     width: 100%;
-    min-height: 335px;
+    min-height: 376px;
     height: auto;
     background-color: var(--card);
     border: 1px solid var(--border);
