@@ -18,6 +18,10 @@
         font-size: 10px;
     }
 
+     #esta-semana {
+        display: none !important;
+    }
+
     #tua-intencao {
         max-width: 231px;
     }
@@ -31,6 +35,10 @@
         border: none;
         color: var(--text);
         cursor: pointer;
+    }
+
+    #intencao-hoje > h4 {
+        margin-bottom: 13px;
     }
 
     #barra-lateral {
@@ -114,6 +122,21 @@
         font-size: 20px;
     }
 
+    #topo-checklist {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+    }
+
+    #topo-checklist .botao, #topo-botao {
+        width: 100% !important;   
+        max-width: none !important;
+        height: 42px;            
+        font-size: 13px;       
+    }
+
     #progresso-info > h3 {
         font-size: 16px;
     }
@@ -126,9 +149,8 @@
 
     #temporizador {
         flex-direction: column;
-        align-items: flex-start;
         padding: 15px;
-        gap: 15px;
+        margin-top: 15px;
     }
 
     #temporizador h3 {
@@ -153,6 +175,21 @@
         align-items: center;
     }
 
+    #nav-checklist ul {
+         display: flex;
+        flex-flow: row wrap; 
+        gap: 8px;           
+        padding: 0px 14px;   
+        justify-content: space-between; 
+        width: 100%;
+    }
+
+    #nav-checklist li {
+        text-align: center;
+        padding: 5px 0px;   
+        flex: 1;      
+    }
+
     #temporizador-iniciar {
         max-width: none; 
     }
@@ -161,12 +198,10 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 10px;
+        gap: 0px;
+        margin: 0px;
     }
 
-    footer p, #paragrafo-final {
-        font-size: 10px;   
-        opacity: 0.7;
-    }
+   
 }
 
