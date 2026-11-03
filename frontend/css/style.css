@@ -63,6 +63,47 @@ header {
     align-items: center;
     border-bottom: 1px solid var(--border);
     gap: 10px;
+    justify-content: space-between;
+}
+
+header > span {
+    display: flex;
+    align-items: center;
+}
+
+#header-autenticacao > button {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#btn-login {
+    background-color: var(--texto-verde);
+    color: var(--texto-botao);
+    border: none;
+    padding: 9px 8px;
+}
+
+#btn-registo {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+    padding: 8px 8px;
+}
+
+button#btn-login:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
+}
+
+button#btn-registo:hover {
+    box-shadow: 0 0 15px 5px #00ff88;
+    background-color: #00ff88;
+    color: #111;
 }
 
 header > div, header > span {
