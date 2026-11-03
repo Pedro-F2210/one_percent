@@ -43,12 +43,18 @@
 
     <div id="app-content">
         <header>
-            <button type="button" id="btn-menu" class="mobile-menu-toggle">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
-            <div class="letra-transparente">O meu espaço </div> 
-            <span class="material-symbols-outlined letra-transparente">chevron_right</span>
-            <div>O meu dia</div>
+            <span>
+                <button type="button" id="btn-menu" class="mobile-menu-toggle">
+                    <span class="material-symbols-outlined icone-header">menu</span>
+                </button>
+                <div class="letra-transparente">O meu espaço </div>
+                <span class="material-symbols-outlined letra-transparente icone-header">chevron_right</span>
+                <div>O meu dia</div>
+            </span>
+            <div id="header-autenticacao">
+                <button type="button" onclick="window.location.href='login.html'" id="btn-login">Iniciar sessão</button>
+                <button type="button" onclick="window.location.href='registo.html'" id="btn-registo">Criar conta</button>
+            </div>
         </header>
         
         <main>
