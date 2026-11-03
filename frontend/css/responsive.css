@@ -99,6 +99,42 @@
 
 /* Telemóvel */
 @media screen and (max-width: 480px) {
+    header {
+        flex-direction: column-reverse;
+        padding: 16px 11px 10px 7px;
+    }
+
+    header > div {
+        align-self: end;
+    }
+
+    header > span {
+        /* border-top: 1px solid var(--border);
+        padding-top: 10px; */
+        align-self: start;
+        font-size: 10px;
+    }
+
+    header > span >  {
+        font-size: 10px;
+    }
+
+    .icone-header {
+        font-size: 16px;
+    }
+
+    #header-autenticacao > button {
+        font-size: 10px;
+    }
+
+    #btn-registo {
+        padding: 5px 4px;
+    }
+
+    #btn-login {
+        padding: 7px 6px;
+    }
+
     main {
         padding: 15px;
     }
@@ -202,7 +238,5 @@
         gap: 0px;
         margin: 0px;
     }
-
-   
 }
 
