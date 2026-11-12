@@ -94,16 +94,20 @@ header > span {
     padding: 8px 8px;
 }
 
+@media (hover: hover) {
 button#btn-login:hover {
     box-shadow: 0 0 15px 5px #00ff88;
     background-color: #00ff88;
     color: #111;
 }
+}
 
+@media (hover: hover) {
 button#btn-registo:hover {
     box-shadow: 0 0 15px 5px #00ff88;
     background-color: #00ff88;
     color: #111;
+}
 }
 
 header > div, header > span {
@@ -225,9 +229,11 @@ main > h1 {
     will-change: transform, box-shadow; 
 }
 
+@media (hover: hover) {
 #cartao1:hover, #cartao2:hover, #cartao3:hover, #checklist:hover, #intencao-hoje:hover, #temporizador:hover, #esta-semana:hover, #frase-motivacional:hover {
     transform: translateY(-2px);
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+}
 }
 
 
@@ -343,10 +349,12 @@ main > h1 {
     cursor: pointer;
 }
 
+@media (hover: hover) {
 #topo-botao:hover {
     box-shadow: 0 0 15px 5px #00ff88;
     background-color: #00ff88;
     color: #111;
+}
 }
 
 #topo-botao > span {
@@ -384,9 +392,11 @@ main > h1 {
     margin-bottom: 5px;
 }
 
+@media (hover: hover) {
 #nav-checklist li:hover {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.05);
+}
 }
 
 #nav-checklist li:not(.letra-transparente) {
@@ -423,10 +433,12 @@ main > h1 {
     transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+@media (hover: hover) {
 #lista-tarefas-ul li:last-child:hover {
     opacity: 1;
     color: var(--text, #ffffff) !important;
     cursor: pointer;
+}
 }
 
 #lista-tarefas-ul li:last-child input,
@@ -841,16 +853,20 @@ main > h1 {
     transition: all 0.3s ease-in-out;
 }
 
+@media (hover: hover) {
 #temporizador-iniciar:hover {
     box-shadow: 0 0 15px 5px #00ff88;
     background-color: #00ff88;
     color: #111;
 }
+}
 
+@media (hover: hover) {
 #temporizador-iniciar.em-pausa:hover {
     background-color: #be123c !important; 
     box-shadow: 0 0 15px 5px #e11d48;   
     color: #ffffff !important;
+}
 }
 
 #temporizador-check {
@@ -870,11 +886,13 @@ main > h1 {
     font-weight: lighter;
 }
 
+@media (hover: hover) {
 #temporizador-check:hover {
     background-color: #00ff88 !important;
     box-shadow: 0 0 15px 5px #00ff88;
     color: #111111 !important;
     transition: all 0.3s ease-in-out;
+}
 }
 
 
@@ -897,4 +915,3 @@ footer p {
 .escondido {
     display: none !important;
 }
-
